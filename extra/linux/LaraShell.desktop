@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+TryExec=larashell
+Exec=larashell
+Icon=LaraShell
+Terminal=false
+Categories=System;TerminalEmulator;
+
+Name=LaraShell
+GenericName=Terminal
+Comment=A fast, cross-platform, OpenGL terminal emulator
+StartupNotify=true
+StartupWMClass=LaraShell
+Actions=New;
+
+[Desktop Action New]
+Name=New Terminal
+Exec=larashell

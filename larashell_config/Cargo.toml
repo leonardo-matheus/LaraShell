@@ -1,0 +1,18 @@
+[package]
+name = "larashell_config"
+version = "0.2.1-dev"
+authors = ["Christian Duerr <contact@christianduerr.com>"]
+license = "MIT OR Apache-2.0"
+description = "LaraShell configuration abstractions"
+homepage = "https://github.com/larashell/larashell"
+edition = "2021"
+rust-version = "1.70.0"
+
+[dependencies]
+log = { version = "0.4.17", features = ["serde"] }
+serde = "1.0.163"
+toml = "0.8.2"
+
+[dev-dependencies]
+larashell_config_derive = { version = "0.2.3-dev", path = "../larashell_config_derive" }
+serde = { version = "1.0.163", features = ["derive"] }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016-2022 Joe Wilm, The LaraShell Project Contributors -->
+<component type="desktop-application">
+  <id>org.larashell.LaraShell</id>
+  <!-- Translators: The application name -->
+  <name>LaraShell</name>
+  <project_license>APACHE-2.0</project_license>
+  <metadata_license>APACHE-2.0</metadata_license>
+  <!-- Translators: The application's summary / tagline -->
+  <summary>A fast, cross-platform, OpenGL terminal emulator</summary>
+  <description>
+    <p>
+      LaraShell is a modern terminal emulator that comes with sensible defaults,
+      but allows for extensive configuration. By integrating with other
+      applications, rather than reimplementing their functionality, it manages
+      to provide a flexible set of features with high performance.
+    </p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://user-images.githubusercontent.com/8886672/103264352-5ab0d500-49a2-11eb-8961-02f7da66c855.png</image>
+      <caption>LaraShell - A fast, cross-platform, OpenGL terminal emulator</caption>
+    </screenshot>
+  </screenshots>
+  <keywords>
+    <keyword>terminal emulator</keyword>
+    <keyword>GPU</keyword>
+  </keywords>
+  <url type="homepage">https://github.com/larashell/larashell</url>
+  <url type="bugtracker">https://github.com/larashell/larashell/issues</url>
+  <update_contact>https://github.com/larashell/larashell/blob/master/CONTRIBUTING.md#contact</update_contact>
+  <developer_name>Christian Duerr</developer_name>
+</component>

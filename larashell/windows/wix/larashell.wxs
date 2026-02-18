@@ -1,0 +1,51 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+   <Package Name="LaraShell" UpgradeCode="87c21c74-dbd5-4584-89d5-46d9cd0c40a7" Language="1033" Codepage="1252" Version="0.14.0-dev" Manufacturer="LaraShell" InstallerVersion="200">
+      <MajorUpgrade AllowSameVersionUpgrades="yes" DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+      <Icon Id="LaraShellIco" SourceFile=".\larashell\windows\larashell.ico" />
+      <WixVariable Id="WixUILicenseRtf" Value=".\larashell\windows\wix\license.rtf" />
+      <Property Id="ARPPRODUCTICON" Value="LaraShellIco" />
+      <MediaTemplate EmbedCab="yes" />
+      <ui:WixUI Id="WixUI_Minimal" />
+      <Feature Id="ProductFeature" Title="ConsoleApp" Level="1">
+         <ComponentRef Id="LaraShellExe" />
+         <ComponentRef Id="LaraShellShortcut" />
+         <ComponentRef Id="ModifyPathEnv" />
+         <ComponentRef Id="ContextMenu" />
+      </Feature>
+      <!-- Application binaries -->
+      <DirectoryRef Id="LaraShellProgramFiles">
+         <Component Id="LaraShellExe">
+            <File Id="LaraShellExeFile" Source=".\target\release\larashell.exe" Name="larashell.exe" KeyPath="yes" />
+         </Component>
+      </DirectoryRef>
+      <DirectoryRef Id="LaraShellProgramMenu">
+         <!-- Application shortcut -->
+         <Component Id="LaraShellShortcut" Guid="aa36e61a-23cd-4383-b744-2f78e912f0dc">
+            <Shortcut Id="LaraShellShortcutFile" Name="LaraShell" Description="A cross-platform, GPU-accelerated terminal emulator" Target="[LaraShellProgramFiles]larashell.exe" />
+            <RemoveFolder Id="LaraShellProgramMenu" On="uninstall" />
+            <RegistryValue Root="HKCU" Key="Software\Microsoft\LaraShell" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+         </Component>
+      </DirectoryRef>
+      <DirectoryRef Id="LaraShellProgramFiles">
+         <!-- Add to PATH -->
+         <Component Id="ModifyPathEnv" Guid="edf0b679-9eb6-46f7-a5d1-5160f30acb34" KeyPath="yes">
+            <Environment Id="PathEnv" Value="[LaraShellProgramFiles]" Name="PATH" Permanent="no" Part="first" Action="set" System="yes" />
+         </Component>
+      </DirectoryRef>
+      <StandardDirectory Id="ProgramFiles64Folder">
+         <Directory Id="LaraShellProgramFiles" Name="LaraShell" />
+      </StandardDirectory>
+      <StandardDirectory Id="ProgramMenuFolder">
+         <Directory Id="LaraShellProgramMenu" Name="LaraShell" />
+      </StandardDirectory>
+      <!-- Add context menu -->
+      <Component Id="ContextMenu" Guid="449f9121-f7b9-41fe-82da-52349ea8ff91" Directory="TARGETDIR">
+         <RegistryKey Root="HKCU" Key="Software\Classes\Directory\Background\shell\Open LaraShell here\command">
+            <RegistryValue Type="string" Value="[LaraShellProgramFiles]larashell.exe" KeyPath="yes" />
+         </RegistryKey>
+         <RegistryKey Root="HKCU" Key="Software\Classes\Directory\Background\shell\Open LaraShell here">
+            <RegistryValue Type="string" Name="Icon" Value="[LaraShellProgramFiles]larashell.exe" />
+         </RegistryKey>
+      </Component>
+   </Package>
+</Wix>
