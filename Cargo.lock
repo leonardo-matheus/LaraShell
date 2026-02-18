@@ -1252,7 +1252,7 @@ dependencies = [
 
 [[package]]
 name = "larashell"
-version = "0.14.0-dev"
+version = "0.14.0"
 dependencies = [
  "ahash",
  "bitflags 2.4.2",
@@ -1290,9 +1290,8 @@ dependencies = [
 
 [[package]]
 name = "larashell_config"
-version = "0.2.1-dev"
+version = "0.2.1"
 dependencies = [
- "larashell_config_derive",
  "log",
  "serde",
  "toml",
@@ -1300,9 +1299,8 @@ dependencies = [
 
 [[package]]
 name = "larashell_config_derive"
-version = "0.2.3-dev"
+version = "0.2.3"
 dependencies = [
- "larashell_config",
  "log",
  "proc-macro2",
  "quote",
@@ -1313,7 +1311,7 @@ dependencies = [
 
 [[package]]
 name = "larashell_terminal"
-version = "0.22.1-dev"
+version = "0.22.1"
 dependencies = [
  "base64 0.22.0",
  "bitflags 2.4.2",

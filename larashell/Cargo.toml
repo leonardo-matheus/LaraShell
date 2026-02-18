@@ -1,6 +1,6 @@
 [package]
 name = "larashell"
-version = "0.14.0-dev"
+version = "0.14.0"
 authors = ["Christian Duerr <contact@christianduerr.com>", "Joe Wilm <joe@jwilm.com>"]
 license = "Apache-2.0"
 description = "A fast, cross-platform, OpenGL terminal emulator with AI-powered autocomplete"
@@ -11,15 +11,15 @@ rust-version = "1.70.0"
 
 [dependencies.larashell_terminal]
 path = "../larashell_terminal"
-version = "0.22.1-dev"
+version = "0.22.1"
 
 [dependencies.larashell_config_derive]
 path = "../larashell_config_derive"
-version = "0.2.3-dev"
+version = "0.2.3"
 
 [dependencies.larashell_config]
 path = "../larashell_config"
-version = "0.2.1-dev"
+version = "0.2.1"
 
 [dependencies]
 ahash = { version = "0.8.6", features = ["no-rng"] }

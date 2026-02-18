@@ -1,6 +1,6 @@
 [package]
 name = "larashell_config"
-version = "0.2.1-dev"
+version = "0.2.1"
 authors = ["Christian Duerr <contact@christianduerr.com>"]
 license = "MIT OR Apache-2.0"
 description = "LaraShell configuration abstractions"
@@ -14,5 +14,5 @@ serde = "1.0.163"
 toml = "0.8.2"
 
 [dev-dependencies]
-larashell_config_derive = { version = "0.2.3-dev", path = "../larashell_config_derive" }
+larashell_config_derive = { version = "0.2.3", path = "../larashell_config_derive" }
 serde = { version = "1.0.163", features = ["derive"] }
